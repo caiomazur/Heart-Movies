@@ -2,6 +2,13 @@ const express = require('express');
 const router = express.Router();
 
 /* GET home page */
+
+
+const imdbApi = imdb-api({
+  apiKey: process.env.API_KEY,
+  
+}); 
+
 router.get("/", (req, res, next) => {
 
   try {
@@ -11,7 +18,7 @@ router.get("/", (req, res, next) => {
       redirect: 'follow'
     };
     
-    fetch('https://imdb-api.com/en/API/Top250TVs/k_cssmdr37', requestOptions)
+    fetch('https://imdb-api.com/en/API/Top250TVs', requestOptions)
       .then(response => response.json())
       .then(result => {
         res.render('index', {result})
