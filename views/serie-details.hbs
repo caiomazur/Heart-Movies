@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row justify-content-around">
+
+<div class="container">
+  <div class="row justify-content-around">
+ 
+  <div class="card" style="width: 20rem; ">
+  {{#if result.image}}
+  <img src={{result.image}} class="card-img-top" alt="Photo" style="max-height: auto;">
+  {{/if}}
+  {{#unless result.image}}
+  <img src="/images/404.png" class="card-img-top" alt="Photo" style="max-height: 10rem;">
+  {{/unless}}
+  <div class="card-body">
+    <h5 class="card-title">{{result.title}}</h5>
+    <hr>
+    <p class="card-text">Description: {{result.plot}}</p>
+  </div>
+    <a href="/profile" class="page-btn">Back to Profile</a>
+  </div>
+
+</div>
+</div>
+  </div>

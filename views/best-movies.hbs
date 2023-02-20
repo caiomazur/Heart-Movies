@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row justify-content-around">
+
+<div class="container">
+  <div class="row justify-content-around">
+  {{#each result.items}}
+  <div class="card" style="width: 15rem;">
+  {{#if image}}
+  <img src={{image}} class="card-img-top" alt="Photo" style="max-height: 12rem;">
+  {{/if}}
+{{!--   {{#unless image}}
+  <img src="/images/404.png" class="card-img-top" alt="Photo" style="max-height: 10rem;">
+  {{/unless}} --}}
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <hr>
+    <p class="card-text">Rating: {{rank}}</p>
+     <p class="card-text">Year: {{year}}</p>
+     <p class="card-text">Crew: {{crew}}</p>
+  </div>
+    <a href="/movie-details/{{id}}" class="page-btn">Go to details</a>
+  </div>
+  {{/each}}
+</div>
+</div>
+  </div>

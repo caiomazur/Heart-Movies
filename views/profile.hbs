@@ -1,0 +1,25 @@
+ <h1>My Profile</h1>
+
+{{!--  {{#if username}}
+ <h2>Welcome {{username}}</h2>
+ <img class="cat" src="{{imageUrl}}" alt="pic">
+ <p>Bio: {{description}}</p>
+ <a href="/edit-profile/{{_id}}">Edit Profile</a>
+    {{else}}
+     <p style='color: red'>You have to log in or create an account</p>
+    {{/if}}
+ --}}
+
+
+{{#if username}}
+<div class="card" style="width: 18rem;"> 
+ <h2>Welcome {{username}}</h2>
+  <img class="card-img-top" src="{{imageUrl}}" alt="Card image cap">
+  <a href="/edit-profile/{{_id}}">Edit Profile</a>
+    {{else}}
+     <p style='color: red'>You have to log in or create an account</p>
+    {{/if}}
+  <div class="card-body">
+    <p class="card-text">Bio: {{description}}</p>
+  </div>
+</div>

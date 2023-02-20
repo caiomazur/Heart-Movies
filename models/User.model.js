@@ -6,20 +6,24 @@ const userSchema = new Schema(
     username: {
       type: String,
       required: false,
-      unique: true,
       trim: true,
     },
-    email: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true,
-      lowercase: true,
-    },
+
     password: {
       type: String,
       required: true,
     },
+
+    imageUrl: {
+      type: String,
+      default: "https://shamelesstale.files.wordpress.com/2016/03/cat-sneeze14.jpg",
+   },
+
+   description: {
+    type: String,
+    
+ },
+
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
