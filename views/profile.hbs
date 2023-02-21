@@ -2,21 +2,12 @@
  
  <h1>My Profile</h1>
 
-{{!--  {{#if username}}
- <h2>Welcome {{username}}</h2>
- <img class="cat" src="{{imageUrl}}" alt="pic">
- <p>Bio: {{description}}</p>
- <a href="/edit-profile/{{_id}}">Edit Profile</a>
-    {{else}}
-     <p style='color: red'>You have to log in or create an account</p>
-    {{/if}}
- --}}
 
 
-{{#if username}}
+{{#if checkUser.username}}
 <div class="card" style="width: 18rem;"> 
- <h2>Welcome {{username}}</h2>
-  <img class="card-img-top" src="{{imageUrl}}" alt="Card image cap">
+ <h2>Welcome {{checkUser.username}}</h2>
+  <img class="card-img-top" src="{{checkUser.imageUrl}}" alt="Card image cap">
   <a href="/edit-profile/{{_id}}">Edit Profile</a>
     {{else}}
      <p style='color: red'>You have to log in or create an account</p>
@@ -26,3 +17,43 @@
   </div>
 </div>
 
+
+<div class="container">
+  <h2 id="my-games-title">My Favorite Movies</h2>
+
+  {{#each checkUser}}
+   {{#each favoriteMovies}}
+   <h2>{{this.title}}</h2>
+   {{/each}}
+  {{/each}}
+
+  <div class="row justify-content-around">
+  {{#each currentUser.favoriteMovies}}
+  <div class="card" style="width: 18rem;">
+    <p>{{name}}</p>
+  {{#if image}}
+  <img src={{image}} class="card-img-top" alt="Photo" style="max-height: 10rem;">
+  {{/if}}
+
+  {{#unless image}}
+  <img src="/images/404.png" class="card-img-top" alt="Photo" style="max-height: 10rem;">
+  {{/unless}}
+
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <hr>
+ 
+    {{#if likes}}
+    <p class="card-text likes-text">{{likes.length}} <img src="/images/logo2.png" class="likes-img" alt=""> <span class="span-likes-text-profile">|| user created ||</span></p>
+    {{/if}}
+  </div>
+    <div class="profile-cards-btns">
+
+ {{!--    {{#if movie}}
+    <a href="/movie-details/{{apiId}}" class="page-btn">Go to details</a>
+    {{/if}} --}}
+    </div>
+  </div>
+  {{/each}}
+</div>
+</div>

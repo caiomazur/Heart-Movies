@@ -6,11 +6,13 @@ const fileUploader = require('../config/cloudinary.config');
 
 /* GET home page */
 
-router.get("/profile", isLoggedIn, (req, res, next) => {
+router.get("/profile", isLoggedIn, async (req, res, next) => {
   let user = req.session.currentUser;
-  console.log(req.session);
+  const checkUser = await User.findById(user).populate('favoriteMovies')
+  console.log(user);
+  console.log(checkUser);
 
-  res.render("profile", user);
+  res.render("profile", {checkUser});
 });
 
 router.get("/edit-profile/:id", async (req, res, next) => {
