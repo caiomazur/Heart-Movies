@@ -21,6 +21,11 @@
 
       <input type='text' value='{{imageUrl}}' name='currentImage' hidden />
       <button type='submit' class='btn btn-primary'>Submit</button>
+
+    </form>
+
+    <form action="/edit-profile/{{_id}}/delete" method="post">
+      <button type='submit' class='btn btn-danger'>Delete</button>
     </form>
   </div>
 </div>

@@ -33,6 +33,21 @@
     <a href="/movies" class="page-btn">Back to Movies</a>
   </div>
 
+ <form action="/addMovie/{{result.id}}" method="post">
+
+    <div class="submit_form">
+        <button class="like_button" type ="submit"><span><b>Like Me</b></span></button>     
+     </div>
+     </form>
+
+      <form action="/removeMovie/{{result.id}}" method="post">
+
+    <div class="submit_form">
+        <button class="like_button" type ="submit"><span><b>Delete Me</b></span></button>     
+     </div>
+     </form>
+
 </div>
 </div>
+
   </div>

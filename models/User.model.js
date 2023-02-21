@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const Movie = require("./Movie.model");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
 const userSchema = new Schema(
@@ -21,8 +22,12 @@ const userSchema = new Schema(
 
    description: {
     type: String,
-    
- },
+   },
+
+   favoriteMovies: [{
+    type: Schema.Types.ObjectId, 
+    ref: 'Movie',
+  }],
 
   },
   {
