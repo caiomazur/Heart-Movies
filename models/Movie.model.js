@@ -10,7 +10,14 @@ const movieSchema = new Schema(
     image: String,
     imDbRating: String,
     directors: String,
+
+    userfavorite: [{
+        type: Schema.Types.ObjectId, 
+        ref: 'User',
+      }],
+
   },
+  
   {
     timestamps: true,
   }

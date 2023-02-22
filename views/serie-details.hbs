@@ -12,11 +12,12 @@
     <h5 class="card-title">{{result.title}}</h5>
     <hr>
     <p class="card-text">Description: {{result.plot}}</p>
-
+    <hr>
+    <a href="/trailer/{{result.id}}" class="page-btn">Watch Trailer</a>
   </div>
     <a href="/profile" class="page-btn">Back to Profile</a>
   </div>
- <form action="/addMovie/{{result.id}}" method="post">
+ <form action="/addSerie/{{result.id}}" method="post">
 
     <div class="submit_form">
         <button class="like_button" type ="submit"><span><b>Like Me</b></span></button>     

@@ -20,6 +20,20 @@
     <h5 class="card-title">{{title}}</h5>
     <hr>
     <p class="card-text">Description: {{description}}</p>
+      <div>
+
+ <form action="/addMovie/{{id}}" method="post">
+    <div class="submit_form">
+        <button class="like_button" type ="submit"><span><b>Like Me</b></span></button>     
+     </div>
+  </form>
+      <form action="/removeMovie/{{result.id}}" method="post">
+
+    <div class="submit_form">
+        <button class="like_button" type ="submit"><span><b>Delete Me</b></span></button>     
+     </div>
+     </form>
+  </div>
   </div>
   
     <a href="/movie-details/{{id}}" class="page-btn">Go to details</a>

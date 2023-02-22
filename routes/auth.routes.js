@@ -138,6 +138,7 @@ router.post("/login", async (req, res, next) => {
 
 // GET /auth/logout
 router.get("/logout", (req, res) => {
+  res.clearCookie('nToken');
   req.session.destroy((err) => {
     if (err) {
       res.status(500).render("auth/logout", { errorMessage: err.message });

@@ -56,9 +56,11 @@ router.post("/edit-profile/:id", fileUploader.single('poster'), async (req, res,
 });
 
 router.post('/edit-profile/:id/delete', async (req, res, next) => {
+  
      try {
       const {id} = req.params
       await User.findByIdAndDelete(id)
+      req.session.destroy()
       res.redirect('/')
   
 }    catch (error) {

@@ -1,59 +1,58 @@
-
- 
- <h1>My Profile</h1>
-
-
+<h1>My Profile</h1>
 
 {{#if checkUser.username}}
 <div class="card" style="width: 18rem;"> 
  <h2>Welcome {{checkUser.username}}</h2>
   <img class="card-img-top" src="{{checkUser.imageUrl}}" alt="Card image cap">
-  <a href="/edit-profile/{{_id}}">Edit Profile</a>
+  <div class="card-body">
+    <p class="card-text">Bio: {{checkUser.description}}</p>
+  </div>
+  <a href="/edit-profile/{{checkUser._id}}">Edit Profile</a>
     {{else}}
      <p style='color: red'>You have to log in or create an account</p>
     {{/if}}
-  <div class="card-body">
-    <p class="card-text">Bio: {{description}}</p>
-  </div>
+  
 </div>
 
 
-<div class="container">
-  <h2 id="my-games-title">My Favorite Movies</h2>
 
-  {{#each checkUser}}
-   {{#each favoriteMovies}}
-   <h2>{{this.title}}</h2>
-   {{/each}}
-  {{/each}}
-
+  <div class="container">
+  <h2 id="my-movies-title">My Favorites</h2>
+ 
   <div class="row justify-content-around">
-  {{#each currentUser.favoriteMovies}}
+       {{#each checkUser}}
+ {{#each favoriteMovies}}
   <div class="card" style="width: 18rem;">
-    <p>{{name}}</p>
-  {{#if image}}
-  <img src={{image}} class="card-img-top" alt="Photo" style="max-height: 10rem;">
-  {{/if}}
+    <h4>{{this.title}}</h4>
+ {{!--  {{#if imageUrl}} --}}
+  <img src={{this.image}} class="card-img-top" alt="Photo" style="max-height: 10rem;">
+ {{!--  {{/if}} --}}
 
-  {{#unless image}}
+{{!--   {{#unless this.imageUrl}}
   <img src="/images/404.png" class="card-img-top" alt="Photo" style="max-height: 10rem;">
-  {{/unless}}
+  {{/unless}} --}}
 
   <div class="card-body">
-    <h5 class="card-title">{{title}}</h5>
+    <p>Genres: {{this.genres}}</p>
     <hr>
- 
-    {{#if likes}}
-    <p class="card-text likes-text">{{likes.length}} <img src="/images/logo2.png" class="likes-img" alt=""> <span class="span-likes-text-profile">|| user created ||</span></p>
-    {{/if}}
+    <p>Rating: {{this.imDbRating}}</p>
+<hr>
+    
+    <p class="card-text likes-text">{{likes.length}} <img src="/images/logo2.png" class="likes-img" alt=""> <span class="span-likes-text-profile"></span></p>
+  {{!--   {{#if username}} --}}
+    <a href="/movie-details/{{apiId}}" class="page-btn">movie details</a>
+   {{!--  {{else}} --}}
+    <a href="/serie-details/{{apiId}}" class="page-btn">serie details</a>
+    {{!--  {{/if}} --}}
   </div>
     <div class="profile-cards-btns">
-
- {{!--    {{#if movie}}
-    <a href="/movie-details/{{apiId}}" class="page-btn">Go to details</a>
-    {{/if}} --}}
+    
+  
     </div>
+    
   </div>
-  {{/each}}
+    {{/each}}
+    {{/each}}
 </div>
+
 </div>

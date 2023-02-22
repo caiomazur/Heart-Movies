@@ -1,4 +1,4 @@
-<div class="container">
+{{!-- <div class="container">
   <div class="row justify-content-around">
 
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -13,12 +13,11 @@
       <img class="d-block w-100" src="{{result.image.items}}" alt="Third slide">
     </div>
   </div>
-</div>
+</div> --}}
 
 <div class="container">
   <div class="row justify-content-around">
- 
-  <div class="card" style="width: 20rem; ">
+  <div class="card" style="width: 30rem; ">
   {{#if result.image}}
   <img src={{result.image}} class="card-img-top" alt="Photo" style="max-height: auto;">
   {{/if}}
@@ -29,24 +28,62 @@
     <h5 class="card-title">{{result.title}}</h5>
     <hr>
     <p class="card-text">Description: {{result.plot}}</p>
+    <hr>
+    <p class="card-text">Cast: {{result.stars}}</p>
+    <hr>
+    <p class="card-text">Director: {{result.directors}}</p>
+    <hr>
+    <p class="card-text">Rating: {{result.imDbRating}}</p>
 
-  </div>
-    <a href="/movies" class="page-btn">Back to Movies</a>
-  </div>
+
+
+  <a href="/trailer/{{result.id}}" class="page-btn">Watch Trailer</a>
+ 
  <form action="/addMovie/{{result.id}}" method="post">
-
     <div class="submit_form">
         <button class="like_button" type ="submit"><span><b>Like Me</b></span></button>     
      </div>
-     </form>
+  </form>
+ 
+     
+{{!-- </div>
+    {{#each userFavorite}}
+  <p>{{this.username}}</p>
+    {{/each}}
+  </div> --}}
 
       <form action="/removeMovie/{{result.id}}" method="post">
-
     <div class="submit_form">
         <button class="like_button" type ="submit"><span><b>Delete Me</b></span></button>     
      </div>
      </form>
+       </div>
+     
 
+
+
+
+
+
+     <div class="container">
+  <h2 id="my-movies-title">Who likes</h2>
+  <div class="row justify-content-around">
+{{#each checkMovie}}
+ {{#each userfavorite}}
+    <h1>{{this.username}}</h1>
+  <div class="card" style="width: 18rem;">
+  <img src={{this.imageUrl}} class="card-img-top" alt="Photo" style="max-height: 10rem;">
+
+  <div class="card-body">
+    <p>Bio: {{this.description}}</p>
+    <hr>
+  </div>    
+  </div>
+    {{/each}}
+    {{/each}}
 </div>
+</div>
+    <a href="/profile" class="page-btn">Back Profile</a>
+  </div>
 </div>
   </div>
