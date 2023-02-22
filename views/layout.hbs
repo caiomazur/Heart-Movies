@@ -16,101 +16,9 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">HEART MOVIES</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/profile">Profile
-              <span class="sr-only"></span></a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="/best-movies">Best Movies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/best-series">Best Series</a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdown"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="false"
-              aria-expanded="true"
-            >
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-
-        <form class="form-inline my-2 my-lg-0" action="/movies" method="get">
-          <input
-            class="form-control mr-sm-2"
-            type="search"
-            name="title"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
-            class="btn btn-outline-success my-2 my-sm-0"
-            type="submit"
-          >Search</button>
-        </form>
-
-      </div>
-
-      <ul>
-        <li class="nav-item">
-          <a class="nav-link" href="/logout">Log Out</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/signup">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
-        </li>
-
-      </ul>
-
-    </nav>
-
-
-
-
-
-
-
-
-
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="/">HEART MOVIES</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -125,14 +33,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/profile"
+              >Profile</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
+
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -141,29 +48,51 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown link
+                Categories
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="/best-movies">Best Movies</a></li>
+                <li><a class="dropdown-item" href="/best-series">Best Series</a></li>
+                <li><a class="dropdown-item" href="/movies">All Movies</a></li>
               </ul>
+            </li>
+
+            <form
+              class="form-inline my-2 my-lg-0"
+              action="/movies"
+              method="get"
+            >
+              <div class="d-inline">
+                <input
+                  class="form-control mr-sm-2 d-inline"
+                  type="search"
+                  name="title"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+              </div>
+              <div class="d-inline">
+                <button
+                  type="submit"
+                  class="btn btn-outline-primary d-inline"
+                >Search</button>
+              </div>
+            </form>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Log In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/signup">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Log Out</a>
             </li>
           </ul>
         </div>
       </div>
+
     </nav>
-
-
-
-
-
-
-
-
-
-
-
 
     {{{body}}}
     <script
