@@ -1,4 +1,4 @@
-<div class="container container-profile">
+{{!-- <div class="container container-profile">
 {{#if checkUser.username}}
 <div class="card card-profile" style="width: 15rem;"> 
  <h3>Welcome {{checkUser.username}}</h3>
@@ -13,8 +13,23 @@
     {{/if}}
 </div>
 </div>
+ --}}
 
-
+ <div class="container container-profile d-flex justify-content-center align-items-center">
+  {{#if checkUser.username}}
+    <div class="card card-profile p-4" > 
+      <h3>{{checkUser.username}}</h3>
+      <img class="card-img-top rounded-circle" src="{{checkUser.imageUrl}}" alt="Card image cap">
+      <div class="card-body">
+        <p class="card-text">Bio: {{checkUser.description}}</p>
+      </div>
+      <button type="button" id="btn-edit" class="btn btn-outline-light"><a href="/edit-profile/{{checkUser._id}}">Edit Profile</a></button>
+    </div>
+  {{else}}
+    <p style='color: red'>You have to log in or create an account</p>
+  {{/if}}
+</div>
+<hr>
 
   <div class="container list">
   <h2 id="my-movies-title">My Favorites</h2>
