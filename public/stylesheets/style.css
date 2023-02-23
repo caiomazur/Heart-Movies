@@ -1,16 +1,163 @@
+/* 
 body {
-  margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
+background-color: black;
 }
 
-a {
-  color: #00b7ff;
+
+.bottom {
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
-  color: 15px;
+
+.main_details{
+  display: flex; 
+  flex-direction: column;  
+  margin:auto;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  padding-left: 10%;
+  color:#90ECF4;
+  padding-right: 10%;
+}
+.movie_name{
+  font-size: 2em;
+  color:#fff;
 }
 
-.container {
+
+
+#people-likes > div {
+  display: flex;
+  justify-content: space-evenly;
+ 
+}
+
+#people-likes > div > article {
+  display: flex;
+  justify-content: center;
+  flex-direction:column;
+  align-items: center;
+}
+#people-likes{
+  padding: 75px 0;
+  margin: 0 auto;
   text-align: center;
 }
+#people-likes .name {
+font-size: 1.5em;
+font-weight: 700;
+}
+
+
+.platforms,.description,.submit_form, .rating{
+  padding-top: 5%;
+  
+}
+.description{
+  text-align: justify;
+  padding-bottom: 6vh;
+  color:#fff;
+}
+.details_bold{
+  color: rgb(246, 237, 233);
+  text-decoration: underline;
+}
+.trailer_bold{
+  color:#1712a9;
+  text-decoration: underline;
+}
+.trailer,.director,.release_date{
+  text-decoration: none;
+  font-size: 1.2em;
+  padding-top: 5%;
+  padding-bottom: 6%;
+  color:#CEF2F8;
+  
+}
+.arrange_image{
+  display: flex;
+}
+.main_director{
+  display: flex;
+  flex-direction: column;
+  padding-left: 3%;
+}
+.like_button_image{
+  width: 5vh;
+}
+.like_button{
+  border: none;
+  background: none;
+}
+
+.image_details{
+  border: 2px solid #68767A;
+  border-radius: 5px;
+  box-shadow: 0 10px 50px #DAE4E7;
+}
+.movie_name_details{
+  color:#CEF2F8;
+}
+.logo_writing{
+  display: flex;
+}
+
+
+
+@media (max-width:400px) {
+ 
+  #carouselExampleSlidesOnly {
+    width: 82vw;
+    height: 350px;
+    padding-left: 8vh;
+}
+  .main_text{
+    width: 50vh;
+    padding-left: 10%;
+    
+  }
+  .home_page_body > .row{
+    width:100vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 10%;
+  }
+  .image_logo{
+    width: 14%;
+  }
+  .logo_phone_version{
+    display: flex;
+    
+  }
+
+   .image_details{
+    width: 35vh;
+    height: 20vh;
+   }
+   .main_director{
+    display: flex;
+    flex-direction: column;
+    margin-top: 45%;
+    margin-left: -242px
+   }
+
+  .profile-pics-div{
+    justify-content: center;
+  }
+  .hr-profile{
+    width:100%;
+  }
+
+}  */
+
+
+    @media only screen and (max-width: 768px) {
+        #people-likes .card {
+            max-width: 200px;
+            margin: auto;
+        }
+    }
+
+

@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{appTitle}}</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
@@ -16,93 +16,97 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">HEART MOVIES</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="/profile"
-              >Profile</a>
-            </li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">HEART MOVIES</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Categories
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/best-movies">Best Movies</a></li>
-                <li><a class="dropdown-item" href="/best-series">Best Series</a></li>
-                <li><a class="dropdown-item" href="/movies">All Movies</a></li>
-              </ul>
-            </li>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/profile">Profile
+              <span class="sr-only"></span></a>
+          </li>
 
-            <form
-              class="form-inline my-2 my-lg-0"
-              action="/movies"
-              method="get"
+          <li class="nav-item">
+            <a class="nav-link" href="/best-movies">Best Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/best-series">Best Series</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="false"
+              aria-expanded="true"
             >
-              <div class="d-inline">
-                <input
-                  class="form-control mr-sm-2 d-inline"
-                  type="search"
-                  name="title"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-              </div>
-              <div class="d-inline">
-                <button
-                  type="submit"
-                  class="btn btn-outline-primary d-inline"
-                >Search</button>
-              </div>
-            </form>
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
 
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Log In</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/signup">Sign Up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/logout">Log Out</a>
-            </li>
-          </ul>
-        </div>
+      
+
+      <form class="form-inline my-2 my-lg-0" action="/movies" method="get">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          name="title"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button
+          class="btn btn-outline-success my-2 my-sm-0"
+          type="submit"
+        >Search</button>
+      </form>
+
       </div>
+
+<ul>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Log Out</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/signup">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+
+      </ul>
+
+      
 
     </nav>
 
     {{{body}}}
     <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
     <script src="/js/script.js"></script>
