@@ -37,8 +37,34 @@ body {
 }
 
 #nav-form {
-  margin-top: 1.9vh;
+  margin-top: 2vh;
   margin-right: 1vw;
+}
+
+#login-btn {
+  color: rgb(251, 133, 0);
+  border-color: rgb(251, 133, 0);
+  margin-left: 0.8rem;
+}
+#login-btn:hover {
+  color: white;
+  background-color: rgb(251, 133, 0);
+}
+
+#search-btn {
+  color: rgb(251, 133, 0);
+  border-color: rgb(251, 133, 0);
+  margin-top: 0.2vh;
+}
+
+#search-btn:hover {
+  color: white;
+  background-color: rgb(251, 133, 0);
+}
+
+#signup-btn {
+  background-color: rgb(251, 133, 0);
+  margin-left: 1rem;
 }
 
 #welcome-section {
@@ -56,13 +82,9 @@ body {
   transition: all ease-in-out 250ms;
 }
 #main-title h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-}
-
-.section1-card {
-  background: linear-gradient(to bottom, #18122b, #393053);
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 /* Footer */
@@ -90,20 +112,46 @@ body {
 #carouselExampleFade {
   max-width: 750px;
   max-height: 550px;
+  box-shadow: 10px 5px 5px rgb(251, 133, 0);
 }
 
-#movies-bg {
-  background-image: url(/public/images/maxresdefault.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
+/* Section 2 */
+
+#section2 {
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+.icon svg {
+  padding-top: 3vh;
+  width: 2.5vw;
+  height: auto;
+}
+
+#section2 p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: light;
+}
+
+.section1-card {
+  background: linear-gradient(to bottom, #18122b, #393053);
+  padding: 2vh;
+}
+
+.hr {
+  color: rgb(251, 133, 0);
+}
+
+/* Section 3 */
+
+.section3-text {
+  margin-left: 5vw;
+}
+
+#section3 {
+  padding-top: 3vh;
+}
+
+.home-movie-title {
+  padding-top: 1rem;
+  font-size: 1.2rem;
 }

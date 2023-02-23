@@ -83,20 +83,30 @@
               aria-label="Search"
             />
             <button
+              id="search-btn"
               class="btn btn-outline-primary"
               type="submit"
             >Search</button>
           </form>
           <div id="auth-btn-container" class="d-flex">
-            <a class="nav-link" href="/login">
-              <button id="login-btn" class="btn btn-outline-light me-2">Log In</button>
-            </a>
-            <a class="nav-link" href="/signup">
-              <button id="signup-btn" class="btn btn-primary me-2">Sign Up</button>
-            </a>
-            <a class="nav-link" href="/logout">
-              <button id="logout-btn" class="btn btn-outline-light me-2">Log Out</button>
-            </a>
+            {{#unless checkUser}}
+              <a class="nav-link" href="/login">
+                <button
+                  id="login-btn"
+                  class="btn btn-outline-light me-2 text-white"
+                >Log In</button>
+              </a>
+              <a class="nav-link" href="/signup">
+                <button id="signup-btn" class="btn btn-primary me-2">Sign Up</button>
+              </a>
+            {{/unless}}
+
+            {{#if checkUser}}
+              <a class="nav-link" href="/logout">
+                <button id="logout-btn" class="btn btn-outline-light me-2">Log
+                  Out</button>
+              </a>
+            {{/if}}
           </div>
         </div>
       </div>
@@ -126,14 +136,14 @@
                   href="https://github.com/caiomazur"
                 >Caio's Github</a>
               </li>
-              <hr class="text-secondary" />
+              <hr class="hr" />
               <li>
                 <a
                   class="text-decoration-none text-secondary"
                   href="https://github.com/Deroubaix"
                 >Marisha's Github</a>
               </li>
-              <hr class="text-secondary" />
+              <hr class="hr" />
             </ul>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -145,14 +155,14 @@
                   href="/best-movies"
                 >Best Movies</a>
               </li>
-              <hr class="text-secondary" />
+              <hr class="hr" />
               <li>
                 <a
                   class="text-decoration-none text-secondary"
                   href="/best-series"
                 >Best Series</a>
               </li>
-              <hr class="text-secondary" />
+              <hr class="hr" />
             </ul>
           </div>
           <div class="col-lg-3 col-md-6">
@@ -162,14 +172,14 @@
                 <a class="text-decoration-none text-secondary" href="/login">Log
                   In</a>
               </li>
-              <hr class="text-secondary" />
+              <hr class="hr" />
               <li>
                 <a
                   class="text-decoration-none text-secondary"
                   href="/signup"
                 >Sign Up</a>
               </li>
-              <hr class="text-secondary" />
+              <hr class="hr" />
             </ul>
           </div>
         </div>
