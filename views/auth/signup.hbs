@@ -64,12 +64,21 @@
 
             </div>
 
+             <div class=" mb-4">
+               <label>Image:
+                <input type='file' name='poster' class='form-control-file' />
+               </label>
+             </div>
+
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">
+            <button type="submit" id="btn" class="btn btn-primary btn-block mb-4">
               Sign Up
             </button>
 
           </form>
+          {{#if errorMessage}}
+              <p class="error">{{errorMessage}}</p>
+          {{/if}}
         </div>
       </div>
     </div>

@@ -1,31 +1,81 @@
-<h1>Edit Profile</h1>
 
-<div class='row'>
-  <div class='col-md-6'>
-    <form action='/edit-profile/{{_id}}' method='post' enctype='multipart/form-data'>
-      <div class='form-group'>
-        <label for='user' class='form-label'>Name</label>
-        <input type='text' name='username' class='form-control' id='username' value='{{username}}' />
+<section class="text-center">
+  <!-- Background image -->
+  <div
+    class="p-5 bg-image"
+    style="
+        background-image: url('/images/movies-back.jpeg');
+        height: 300px;
+        "
+  ></div>
+  <!-- Background image -->
+
+  <div
+    id="opacity-background"
+    class="card mx-4 mx-md-5 shadow-5-strong"
+    style="
+        margin-top: -100px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(30px);
+        "
+  >
+    <div id="text-form-css" class="card-body py-5 px-md-5">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-5">Edit Profile</h2>
+
+          <form action="/edit-profile/{{_id}}" method="POST" enctype='multipart/form-data'>
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row">
+
+              <div class="form-outline">
+                <label class="form-label" for="form3Example1">Username</label>
+                <input
+                  type="text"
+                  id="form3Example1"
+                  name="username"
+                  class="form-control"
+                />
+
+              </div>
+            </div>
+
+            <!-- Bio input -->
+            <div class="form-outline mb-4">
+              <label for="description" class="form-label">Bio</label>
+              <textarea
+                class="form-control"
+                name="description"
+                id="description"
+                rows="5"
+                placeholder="Say something about yourself"
+              > {{description}}</textarea>
+
+            </div>
+
+             <div class=" mb-4">
+               <label>Image:
+                <input type='file' name='poster' class='form-control-file' />
+               </label>
+             </div>
+
+          
+              <input type='text' value='{{imageUrl}}' name='currentImage' hidden />
+              
+
+            <!-- Submit button -->
+            <button type="submit" id="btn" class="btn btn-primary btn-block mb-4">
+              Submit
+            </button>
+
+          </form>
+
+          <form action="/edit-profile/{{_id}}/delete" method="post">
+            <button type='submit' class='btn btn-danger'>Delete</button>
+          </form>
+        </div>
       </div>
-      <div class='form-group'>
-        <label for='description' class='form-label'>Description</label>
-        <textarea class='form-control' name='description' id='description' cols='30' rows='10'>
-          {{description}}
-        </textarea>
-      </div>
-      <div class='form-group'>
-        <label>Image:
-          <input type='file' name='poster' class='form-control-file' />
-        </label>
-      </div>
-
-      <input type='text' value='{{imageUrl}}' name='currentImage' hidden />
-      <button type='submit' class='btn btn-primary'>Submit</button>
-
-    </form>
-
-    <form action="/edit-profile/{{_id}}/delete" method="post">
-      <button type='submit' class='btn btn-danger'>Delete</button>
-    </form>
+    </div>
   </div>
-</div>
+</section>
