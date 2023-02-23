@@ -201,7 +201,8 @@ font-weight: 700;
     }
 
     .container-margin {
-      padding: 20px;
+      padding-top: 50px;
+      margin-top: 10px;
     }
 
     .list {
@@ -214,6 +215,10 @@ font-weight: 700;
       margin: 2vh 1vw;
 
     }
+
+.text-rating {
+  color: rgb(251, 133, 0) ;
+}
 
     .page-btn {
       text-decoration: none;
@@ -262,6 +267,7 @@ font-weight: 700;
   #error {
     width: 100%;
   }
+
 
  
 
