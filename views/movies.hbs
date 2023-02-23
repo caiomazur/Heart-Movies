@@ -1,44 +1,26 @@
-<div class="container">
-  <div class="row justify-content-around">
 
 
-{{!-- {{#each result.items}}
-<h1>{{title}}</h1>
-{{/each}} --}}
-
-<div class="container">
+<div class="container list">
   <div class="row justify-content-around">
   {{#each result.results}}
-  <div class="card" style="width: 15rem;">
+  <div class="card list-card" style="width: 15rem;">
   {{#if image}}
-  <img src={{image}} class="card-img-top" alt="Photo" style="max-height: 12rem;">
+  <img src={{image}} class="card-img-top" alt="Photo" style="max-height: 15rem;">
   {{/if}}
   {{#unless image}}
-  <img src="/images/404.png" class="card-img-top" alt="Photo" style="max-height: 10rem;">
+  <img src="/images/404-img.jpg" class="card-img-top" alt="Photo" style="max-height: 15rem;">
   {{/unless}}
   <div class="card-body">
-    <h5 class="card-title">{{title}}</h5>
-    <hr>
-    <p class="card-text">Description: {{description}}</p>
-      <div>
+    <h5 class="card-title text-dark">{{title}}</h5>
+    
+    <p class="card-text text-dark">Rating: {{imDbRating}}</p>
 
- <form action="/addMovie/{{id}}" method="post">
-    <div class="submit_form">
-        <button class="like_button" type ="submit"><span><b>Like Me</b></span></button>     
-     </div>
-  </form>
-      <form action="/removeMovie/{{result.id}}" method="post">
-
-    <div class="submit_form">
-        <button class="like_button" type ="submit"><span><b>Delete Me</b></span></button>     
-     </div>
-     </form>
+     <a href="/movie-details/{{id}}" class="page-btn">Go to details</a>
   </div>
-  </div>
-  
-    <a href="/movie-details/{{id}}" class="page-btn">Go to details</a>
   </div>
   {{/each}}
 </div>
 </div>
-  </div>
+
+
+  

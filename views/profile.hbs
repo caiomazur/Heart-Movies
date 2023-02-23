@@ -1,9 +1,8 @@
-<h1>My Profile</h1>
 
 {{#if checkUser.username}}
 <div class="card" style="width: 18rem;"> 
  <h2>Welcome {{checkUser.username}}</h2>
-  <img class="card-img-top" src="{{checkUser.imageUrl}}" alt="Card image cap">
+  <img class="card-img-top rounded-circle" src="{{checkUser.imageUrl}}" alt="Card image cap">
   <div class="card-body">
     <p class="card-text">Bio: {{checkUser.description}}</p>
   </div>
@@ -11,29 +10,40 @@
     {{else}}
      <p style='color: red'>You have to log in or create an account</p>
     {{/if}}
-  
 </div>
 
+<div class="container list">
+  <div class="row justify-content-evenly">
+  {{#each result.items}}
+  <div class="card list-card" style="width: 15rem;">
+  {{#if image}}
+  <img src={{image}} class="card-img-top" alt="Photo" style="max-height: 15rem;">
+  {{/if}}
+  {{#unless image}}
+  <img src="/images/404-img.jpg" class="card-img-top" alt="Photo" style="max-height: 15rem;">
+  {{/unless}}
+  <div class="card-body">
+    <h5 class="card-title text-dark">{{title}}</h5>
+    <p class="card-text text-dark">Rating: {{imDbRating}}</p>
+     <a href="/movie-details/{{id}}" class="page-btn">Go to details</a>
+  </div>
+  </div>
+  {{/each}}
+</div>
+</div>
 
-
-  <div class="container">
+  <div class="container list">
   <h2 id="my-movies-title">My Favorites</h2>
- 
   <div class="row justify-content-around">
        {{#each checkUser}}
  {{#each favoriteMovies}}
-  <div class="card" style="width: 18rem;">
-    <h4>{{this.title}}</h4>
-  <img src={{this.image}} class="card-img-top" alt="Photo" style="max-height: 10rem;">
-  <div class="card-body">
-    <p>Genres: {{this.genres}}</p>
-    <hr>
-    <p>Rating: {{this.imDbRating}}</p>
-<hr>
+  <div class="card list-card" style="width: 15rem;">
     
-    <p class="card-text likes-text">{{likes.length}} <img src="/images/logo2.png" class="likes-img" alt=""> <span class="span-likes-text-profile"></span></p>
-    <a href="/movie-details/{{apiId}}" class="page-btn">movie details</a>
-    <a href="/serie-details/{{apiId}}" class="page-btn">serie details</a>
+  <img src={{this.image}} class="card-img-top" alt="Photo" style="max-height: 15rem;">
+  <div class="card-body">
+    <h5 class="card-title text-dark">{{title}}</h5>
+    <p class="card-text text-dark">Rating: {{imDbRating}}</p>
+     <a href="/movie-details/{{id}}" class="page-btn">Go to details</a>
   </div>    
   </div>
     {{/each}}

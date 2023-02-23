@@ -1,26 +1,23 @@
-<div class="container">
-  <div class="row justify-content-around">
-<div class="container">
-  <div class="row justify-content-around">
+
+<div class="container list">
+  <div class="row justify-content-evenly">
   {{#each result.items}}
-  <div class="card" style="width: 15rem;">
+  <div class="card list-card" style="width: 15rem;">
   {{#if image}}
-  <img src={{image}} class="card-img-top" alt="Photo" style="max-height: 12rem;">
+  <img src={{image}} class="card-img-top" alt="Photo" style="max-height: 15rem;">
   {{/if}}
   {{#unless image}}
-  <img src="/images/404.png" class="card-img-top" alt="Photo" style="max-height: 10rem;">
+  <img src="/images/404-img.jpg" class="card-img-top" alt="Photo" style="max-height: 15rem;">
   {{/unless}}
   <div class="card-body">
-    <h5 class="card-title">{{title}}</h5>
-    <hr>
-    <p class="card-text">Rating: {{rank}}</p>
-     <p class="card-text">Year: {{year}}</p>
-     <p class="card-text">Crew: {{crew}}</p>
-
-  </div>
+    <h5 class="card-title text-dark">{{title}}</h5>
+    <p class="card-text text-dark">Rating: {{imDbRating}}</p>
     <a href="/serie-details/{{id}}" class="page-btn">Go to details</a>
-  </div>
-  {{/each}}
+</div>
+ 
+</div>
+ {{/each}}
 </div>
 </div>
-  </div>
+
+

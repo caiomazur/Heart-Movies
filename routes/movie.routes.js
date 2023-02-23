@@ -40,17 +40,24 @@ router.get("/best-movies", async (req, res, next) => {
 router.get("/movie-details/:id", async (req, res, next) => {
   const apiId = req.params.id;
   let user = req.session.currentUser;
-  const checkUser = await User.findById(user);
-  console.log(checkUser);
+
+  const checkUser = await User.findById(user).populate("favoriteMovies");
+
   const checkMovie = await Movie.findOne({ apiId }).populate("userfavorite");
-  console.log(checkMovie);
+
+  const isFavourite =
+    checkUser.favoriteMovies.filter((movie) => movie.apiId === apiId)
+    .length === 0
+      ? false
+      : true;
+
+  /* console.log(checkMovie); */
+  console.log(isFavourite);
   try {
     const response = await axios.get(
       `https://imdb-api.com/en/API/Title/${myApiId}/${apiId}/FullActor,FullCast,Posters,`
     );
     const result = response.data;
-    //console.log(response);
-    /* console.log("result____________", result); */
 
     await Movie.create({
       apiId: result.id,
@@ -63,10 +70,7 @@ router.get("/movie-details/:id", async (req, res, next) => {
       directors: result.directors,
     });
 
-    /* console.log(checkMovie); */
-
-    /* console.log(result); */
-    res.render("movie-details", { result, checkMovie });
+    res.render("movie-details", { result, checkMovie, user, isFavourite });
   } catch (error) {
     console.log("ola", error);
     next(error);
@@ -76,18 +80,22 @@ router.get("/movie-details/:id", async (req, res, next) => {
 router.get("/serie-details/:id", async (req, res, next) => {
   const apiId = req.params.id;
   let user = req.session.currentUser;
-  const checkUser = await User.findById(user);
-  console.log(checkUser);
-  const checkMovie = await Movie.findOne({ apiId }).populate("userfavorite");
-  console.log(checkMovie);
+  const checkUser = await User.findById(user).populate("favoriteMovies");
+  
+    const checkSerie = await Movie.findOne({ apiId }).populate("userfavorite");
+    const isFavourite =
+    checkUser.favoriteMovies.filter((serie) => serie.apiId === apiId)
+    .length === 0
+      ? false
+      : true;
+      console.log(isFavourite);
   try {
     const response = await axios.get(
       `https://imdb-api.com/en/API/Title/${myApiId}/${apiId}/FullActor,FullCast,Posters,`
     );
-    const result = response.data;
-    //console.log(response);
-    /* console.log("result____________", result); */
 
+      const result = response.data;
+ 
     await Movie.create({
       apiId: result.id,
       title: result.title,
@@ -99,10 +107,7 @@ router.get("/serie-details/:id", async (req, res, next) => {
       directors: result.directors,
     });
 
-    /* console.log(checkMovie); */
-
-    /* console.log(result); */
-    res.render("serie-details", { result, checkMovie });
+    res.render("serie-details", { result, checkSerie, user, isFavourite});
   } catch (error) {
     console.log("ola", error);
     next(error);
@@ -116,13 +121,21 @@ router.post("/removeMovie/:id", async (req, res, next) => {
   try {
     const removeFav = await Movie.findOne({ apiId: apiId });
 
-    await User.findByIdAndUpdate(
+    const newUser = await User.findByIdAndUpdate(
       currentUser._id,
 
-      { $pull: { favoriteMovies: removeFav._id } }
+      { $pull: { favoriteMovies: removeFav._id } },
+      { new: true }
+    );
+    req.session.currentUser = newUser;
+
+     await Movie.findByIdAndUpdate(
+      removeFav._id,
+
+      { $pull: { userfavorite: newUser._id } },
+      { new: true }
     );
     //const removeFav = await Movie.findByIdAndRemove(apiId);
-
     res.redirect(`/movie-details/${apiId}`);
   } catch (error) {
     console.log(error);
@@ -144,8 +157,6 @@ router.get("/best-series", async (req, res, next) => {
     console.log(error);
   }
 });
-
-
 
 router.get("/trailer/:id", async (req, res, next) => {
   const trailerId = req.params.id;
@@ -180,10 +191,9 @@ router.post("/addMovie/:id", isLoggedIn, async (req, res, next) => {
       { $addToSet: { userfavorite: newUser._id } },
       { new: true }
     );
-    
+
     req.session.currentUser = newUser;
     console.log(x);
-   
 
     res.redirect(`/movie-details/${apiId}`);
   } catch (error) {
@@ -210,10 +220,32 @@ router.post("/addSerie/:id", isLoggedIn, async (req, res, next) => {
       { $addToSet: { userfavorite: newUser._id } },
       { new: true }
     );
-    
+
     req.session.currentUser = newUser;
     console.log(x);
-   
+
+    res.redirect(`/serie-details/${apiId}`);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+router.post("/removeSerie/:id", async (req, res, next) => {
+  const apiId = req.params.id;
+  const currentUser = req.session.currentUser;
+
+  try {
+    const removeFav = await Movie.findOne({ apiId: apiId });
+
+    const newUser = await User.findByIdAndUpdate(
+      currentUser._id,
+
+      { $pull: { favoriteMovies: removeFav._id } },
+      { new: true }
+    );
+    req.session.currentUser = newUser;
+    //const removeFav = await Movie.findByIdAndRemove(apiId);
 
     res.redirect(`/serie-details/${apiId}`);
   } catch (error) {
