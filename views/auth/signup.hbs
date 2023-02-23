@@ -1,38 +1,77 @@
-<div id="signup-container" class="container">
-  <div class="row justify-content-center">
-    <div class="col-lg-6 col-md-8">
-      <div id="signup-card" class="card">
-        <div class="card-body">
-          <h2 class="card-title text-center mb-4">Sign Up</h2>
-          <form action="/signup" method="POST" enctype="multipart/form-data">
-            <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
-              <input type="text" class="form-control" id="username" name="username" placeholder="Your username" />
+<section class="text-center">
+  <!-- Background image -->
+  <div
+    class="p-5 bg-image"
+    style="
+        background-image: url('/images/movies-back.jpeg');
+        height: 300px;
+        "
+  ></div>
+  <!-- Background image -->
+
+  <div
+    id="opacity-background"
+    class="card mx-4 mx-md-5 shadow-5-strong"
+    style="
+        margin-top: -100px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(30px);
+        "
+  >
+    <div id="text-form-css" class="card-body py-5 px-md-5">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-5">Sign Up</h2>
+          <form action="/signup" method="POST">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row">
+
+              <div class="form-outline">
+                <label class="form-label" for="form3Example1">Username</label>
+                <input
+                  type="text"
+                  id="form3Example1"
+                  name="username"
+                  class="form-control"
+                />
+
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" name="password" placeholder="Your password" />
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example4">Password</label>
+              <input
+                type="password"
+                id="form3Example4"
+                class="form-control"
+                name="password"
+              />
+
             </div>
-            <div class="mb-3">
+
+            <!-- Bio input -->
+            <div class="form-outline mb-4">
               <label for="description" class="form-label">Bio</label>
-              <textarea class="form-control" name="description" id="description" rows="5" placeholder="Say something about yourself"></textarea>
+              <textarea
+                class="form-control"
+                name="description"
+                id="description"
+                rows="5"
+                placeholder="Say something about yourself"
+              ></textarea>
+
             </div>
-            <div class="mb-3">
-              <label for="poster" class="form-label">Image</label>
-              <input type="file" class="form-control-file" id="poster" name="poster">
-            </div>
-            <div class="d-grid gap-2 mt-4">
-              <button type="submit" class="btn btn-primary">Sign Up</button>
-            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">
+              Sign Up
+            </button>
+
           </form>
-          {{#if errorMessage}}
-            <p class="error mt-3">{{errorMessage}}</p>
-          {{/if}}
         </div>
       </div>
     </div>
   </div>
-</div>
-
-
-
+</section>
