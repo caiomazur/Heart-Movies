@@ -1,4 +1,4 @@
-<div id="login-form">
+{{!-- <div id="login-form">
   <h2>Log In</h2>
   <form action="/login" method="POST">
 
@@ -17,4 +17,81 @@
       <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
-</div>
+</div> --}}
+
+
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="
+        background-image: url('/images/movies-back.jpeg');
+        height: 300px;
+        "></div>
+  <!-- Background image -->
+
+  <div id="opacity-background" class="card mx-4 mx-md-5 shadow-5-strong " style="
+        margin-top: -100px;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(30px);
+        ">
+    <div id="text-form-css"class="card-body py-5 px-md-5 ">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-5">Log In</h2>
+          <form action="/login" method="POST">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row">
+
+             
+                <div class="form-outline">
+                  <label class="form-label" name="name" for="form3Example1">Username</label>
+                  <input type="text" id="form3Example1" name="username" class="form-control" />
+                  
+                </div>
+              </div>
+
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form3Example4">Password</label>
+              <input type="password" id="form3Example4" class="form-control" />
+              
+            </div>
+
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">
+              Log In
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        {{!-- <h2 class="fw-bold mb-5">Log In</h2>
+
+        <form action="/login" method="POST"> 
+          <div class="form-floating mb-3">
+            <input type="text" id="form3Example2" class="form-control form-control-lg" placeholder="Your username"/>
+            <label class="form-label" for="form3Example2">Username</label>
+          </div>
+
+          <div class="form-floating mb-3">
+            <input type="password" id="form3Example4" class="form-control" placeholder="Your password" />
+            <label class="form-label" for="form3Example4">Password</label>
+          </div>
+
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-success btn-lg">
+              Log In
+            </button>
+          </div>
+           {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
+        </form>
+ --}}
+
