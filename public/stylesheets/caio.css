@@ -155,3 +155,10 @@ body {
   padding-top: 1rem;
   font-size: 1.2rem;
 }
+
+#signup-container {
+  background: linear-gradient(to bottom, #18122b, #393053);
+
+}
+
+#signup-card {}

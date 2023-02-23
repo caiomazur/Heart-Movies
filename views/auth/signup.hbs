@@ -1,39 +1,38 @@
-<div id="form">
-  <h2>Sign Up</h2>
-{{!-- 
-  //enctype='multipart/form-data --}}
-  <form action="/signup" method="POST" enctype='multipart/form-data'>
-    <label>
-      Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
-
-     <label>
-      Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
-    <h1>Bio</h1>
-    <label for="description" class="form-label">Bio</label>
-    <textarea
-      class="form-control"
-      name="description"
-      id="description"
-      cols="30"
-      rows="10"
-      placeholder="Say something about yourself">
-      
-    </textarea>
-      <div class='form-group'>
-        <label>Image:
-          <input type='file' name='poster' class='form-control-file' />
-        </label>
+<div id="signup-container" class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <div id="signup-card" class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">Sign Up</h2>
+          <form action="/signup" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" name="username" placeholder="Your username" />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Your password" />
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Bio</label>
+              <textarea class="form-control" name="description" id="description" rows="5" placeholder="Say something about yourself"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="poster" class="form-label">Image</label>
+              <input type="file" class="form-control-file" id="poster" name="poster">
+            </div>
+            <div class="d-grid gap-2 mt-4">
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+            </div>
+          </form>
+          {{#if errorMessage}}
+            <p class="error mt-3">{{errorMessage}}</p>
+          {{/if}}
+        </div>
       </div>
-
-    <button type="submit">Sign Up</button>
-  </form>
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
+    </div>
+  </div>
 </div>
+
+
 
