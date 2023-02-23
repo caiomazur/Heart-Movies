@@ -44,7 +44,7 @@
 
              
                 <div class="form-outline">
-                  <label class="form-label" name="name" for="form3Example1">Username</label>
+                  <label class="form-label" for="form3Example1">Username</label>
                   <input type="text" id="form3Example1" name="username" class="form-control" />
                   
                 </div>
@@ -54,16 +54,18 @@
             <!-- Password input -->
             <div class="form-outline mb-4">
               <label class="form-label" for="form3Example4">Password</label>
-              <input type="password" id="form3Example4" class="form-control" />
+              <input type="password" name="password" id="form3Example4" class="form-control" />
               
             </div>
 
 
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">
+            <button type="submit" id="btn"class="btn  btn-block mb-4">
               Log In
             </button>
-
+ {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+    {{/if}}
           </form>
         </div>
       </div>
