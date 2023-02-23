@@ -157,7 +157,10 @@ font-weight: 700;
         }
     }
 
- 
+    .movie_name_details{
+      font-size: 3rem;
+      color: rgb(240, 151, 49);
+    }
 
     .like_button{
       border: none;
@@ -171,20 +174,25 @@ font-weight: 700;
     }
 
     .details_bold{
-      color: rgb(246, 237, 233);
-      text-decoration: underline;
+      color:rgb(240, 151, 49) ;
+      font-size: 1.5rem;
+     
     }
     .trailer_bold{
       color:yellow;
+      font-size: 1.5rem;
       text-decoration: underline;
     }
     .trailer,.director,.release_date, .cast, .rating, .description{
       text-decoration: none;
       font-size: 1.2em;
-      padding-top: 4%;
-      padding-bottom: 4%;
-      color:#CEF2F8;
-      
+      padding-top: 3%;
+      padding-bottom: 3%;
+      color: white;   
+    }
+
+    .form {
+      padding-top: 40px;
     }
 
     .container-margin {
@@ -197,9 +205,58 @@ font-weight: 700;
     }
 
     .list-card {
-      
+      background: linear-gradient(to bottom, #18122b, #393053);
       margin: 2vh 1vw;
 
     }
+
+    .page-btn {
+      text-decoration: none;
+      color: white;
+    }
+
+    .card-profile {
+      align-items: center;
+      padding: 3vh 1vw;
+      border: 1px solid rgb(251, 133, 0) ;
+      border-radius: 2rem;
+      background: linear-gradient(to bottom, #120e22, #2f2845);
+      margin: 2vh 1vw;
+    }
+
+    .container-profile {
+      margin: 3vh;
+      padding: 3vh 3vw; 
+    }
+  
+
+    #btn {
+      color:rgb(251, 133, 0);
+      border-color:rgb(251, 133, 0);
+      
+  }
+
+  #btn-edit a{
+    text-decoration: none;
+    color:rgb(251, 133, 0);
+      border-color:rgb(251, 133, 0); 
+  }
+  #btn-edit:hover a{
+    text-decoration: none;
+    color:rgb(251, 133, 0);
+   
+     
+  }
+  
+  #btn:hover {
+      color:#635985;
+      background-color: rgb(251, 133, 0);
+  }
+
+  #error {
+    width: 100%;
+  }
+  
+
 
 
