@@ -12,13 +12,20 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/caio.css" />
+
+    <style>
+      @import
+      url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
+    </style>
+
   </head>
 
-  <body>
+  <body class="bg-dark text-white">
 
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav id="nav-bar" class="navbar navbar-expand-lg bg-dark navbar-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">HEART MOVIES</a>
+        <a id="nav-a-logo" class="navbar-brand" href="/">HEART MOVIES</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -31,70 +38,153 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a
+                id="nav-a-profile"
                 class="nav-link active"
                 aria-current="page"
                 href="/profile"
               >Profile</a>
             </li>
-
             <li class="nav-item dropdown">
               <a
+                id="nav-a-categories"
                 class="nav-link dropdown-toggle"
                 href="#"
+                id="navbarDropdownMenuLink"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Categories
               </a>
-              <ul class="dropdown-menu">
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
                 <li><a class="dropdown-item" href="/best-movies">Best Movies</a></li>
                 <li><a class="dropdown-item" href="/best-series">Best Series</a></li>
                 <li><a class="dropdown-item" href="/movies">All Movies</a></li>
               </ul>
             </li>
-
-            <form
-              class="form-inline my-2 my-lg-0"
-              action="/movies"
-              method="get"
-            >
-              <div class="d-inline">
-                <input
-                  class="form-control mr-sm-2 d-inline"
-                  type="search"
-                  name="title"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-              </div>
-              <div class="d-inline">
-                <button
-                  type="submit"
-                  class="btn btn-outline-primary d-inline"
-                >Search</button>
-              </div>
-            </form>
-
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Log In</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/signup">Sign Up</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/logout">Log Out</a>
-            </li>
           </ul>
+          <form
+            id="nav-form"
+            class="d-flex ms-auto"
+            action="/movies"
+            method="get"
+          >
+            <input
+              class="form-control me-2"
+              type="search"
+              name="title"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="btn btn-outline-primary"
+              type="submit"
+            >Search</button>
+          </form>
+          <div id="auth-btn-container" class="d-flex">
+            <a class="nav-link" href="/login">
+              <button id="login-btn" class="btn btn-outline-light me-2">Log In</button>
+            </a>
+            <a class="nav-link" href="/signup">
+              <button id="signup-btn" class="btn btn-primary me-2">Sign Up</button>
+            </a>
+            <a class="nav-link" href="/logout">
+              <button id="logout-btn" class="btn btn-outline-light me-2">Log Out</button>
+            </a>
+          </div>
         </div>
       </div>
-
     </nav>
 
     {{{body}}}
+
+    {{! Footer }}
+    <footer id="footer" class="w-100 py-4 flex-shrink-0 bg-dark opacity-80">
+      <div class="container py-4">
+        <div class="row gy-4 gx-5">
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-white">HEART MOVIES</h5>
+            <p class="s text-secondary">
+              Create a profile, add a bio and a picture. You can then have
+              access to the IMDB api, search for movies and series and add them
+              to your favorites. You can also check who else likes this film in
+              the movie details.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-white mb-3">About Us</h5>
+            <ul class="list-unstyled text-muted">
+              <li>
+                <a
+                  class="text-decoration-none text-secondary"
+                  href="https://github.com/caiomazur"
+                >Caio's Github</a>
+              </li>
+              <hr class="text-secondary" />
+              <li>
+                <a
+                  class="text-decoration-none text-secondary"
+                  href="https://github.com/Deroubaix"
+                >Marisha's Github</a>
+              </li>
+              <hr class="text-secondary" />
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-white mb-3">Best of</h5>
+            <ul class="list-unstyled text-muted">
+              <li>
+                <a
+                  class="text-decoration-none text-secondary"
+                  href="/best-movies"
+                >Best Movies</a>
+              </li>
+              <hr class="text-secondary" />
+              <li>
+                <a
+                  class="text-decoration-none text-secondary"
+                  href="/best-series"
+                >Best Series</a>
+              </li>
+              <hr class="text-secondary" />
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <h5 class="text-white mb-3">Log on</h5>
+            <ul class="list-unstyled text-muted">
+              <li>
+                <a class="text-decoration-none text-secondary" href="/login">Log
+                  In</a>
+              </li>
+              <hr class="text-secondary" />
+              <li>
+                <a
+                  class="text-decoration-none text-secondary"
+                  href="/signup"
+                >Sign Up</a>
+              </li>
+              <hr class="text-secondary" />
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p class="text-secondary-emphasis">
+          &copy; 2023 Developed by Caio Mazur and Marisha Deroubaix -
+          <br />
+          Second Project Ironhack's Web Development Bootcamp.
+        </p>
+        <p class="text-secondary-emphasis">| Heart Movies</p>
+      </div>
+    </footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
@@ -105,6 +195,8 @@
       integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
       crossorigin="anonymous"
     ></script>
+
+    {{!  <script src="/js/caio.js"></script> }}
     <script src="/js/script.js"></script>
   </body>
 
