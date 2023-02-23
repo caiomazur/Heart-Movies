@@ -1,143 +1,32 @@
-{{!-- <h1>{{appTitle}} 🚀</h1>
-<p>Welcome Ironhacker!</p> --}}
-
-{{! <section id="carrousel" class="container-fluid" id="section1">
-  <div id="carouselExampleCaptions" class="carousel slide carousel-fade">
-    <div class="carousel-indicators">
-      <button
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide-to="0"
-        class="active"
-        aria-current="true"
-        aria-label="Slide 1"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide-to="1"
-        aria-label="Slide 2"
-      ></button>
-      <button
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide-to="2"
-        aria-label="Slide 3"
-      ></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img
-          src="/images/Babylon-Banner.png"
-          class="d-block w-100 grayscale"
-          alt="..."
-        />
-        <div class="carousel-caption d-none d-md-block">
-          <h2>
-            ETIAM MAURIS TORTOR, PHARETRA QUIS LOBORTIS IN, PHARETRA IN DIAM
-          </h2>
-          <p>
-            Duis tempus leo vitae ipsum viverra, blandit condimentum sapien
-            porttitor. Duis porttitor sed metus eget mollis. Curabitur bibendum
-            imperdiet tortor, ut pulvinar purus elementum nec. Suspendisse at
-            erat luctus; hendrerit sapien sed, consectetur erat. Maecenas
-            dignissim suscipit orci at molestie. Aenean fringilla dolor vitae
-            lacus lacinia eleifend. Suspendisse et libero nunc. Etiam mauris
-            tortor, pharetra […]
-          </p>
-          <button type="button" class="btn btn-outline-secondary">
-            READ MORE
-          </button>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/wp5483697.jpg"
-          class="d-block w-100 grayscale"
-          alt="..."
-        />
-        <div class="carousel-caption d-none d-md-block">
-          <h2>FALAURIS SOLLICITUDIN QUIS DOLOR VENENATIS FACILISIS</h2>
-          <p>
-            Donec sed dolor eu augue dignissim pellentesque. Fusce semper tortor
-            ornare, luctus sem in, dictum leo. Ut at congue quam! Maecenas
-            luctus interdum odio, eget volutpat velit hendrerit eu? Suspendisse
-            at magna ut sem blandit hendrerit non ut magna. Cras quis porta
-            dolor. Aliquam erat volutpat. Phasellus fringilla feugiat libero nec
-            volutpat. Maecenas fermentum bibendum […]
-          </p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img
-          src="/images/best-murder-mystery-movies-1659380419.jpg"
-          class="d-block w-100 grayscale"
-          alt="..."
-        />
-        <div class="carousel-caption d-none d-md-block">
-          <h2>SUSPENDISSE ORNARE, FELIS FEUGIAT SUSCIPIT PHARETRA</h2>
-          <p>
-            Quisque sit amet sagittis justo. Suspendisse ornare, felis feugiat
-            suscipit pharetra, lorem est viverra odio; tristique tristique diam
-            tellus id tellus. In consectetur aliquet tristique. Curabitur
-            imperdiet leo in nisl consectetur mattis. Quisque bibendum, mauris
-            vitae suscipit ornare; est nibh elementum mauris, eu malesuada nunc
-            magna at justo. Proin blandit id tellus non pellentesque. Mauris […]
-          </p>
-        </div>
-      </div>
-
-    </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carouselExampleCaptions"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carouselExampleCaptions"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</section> }}
-
-<div class="container">
+<div id="welcome-section" class="container-fluid">
   <div class="row align-items-center">
     <div id="main-title" class="col-md-4">
       <div class="text-center">
-        <h1>Heart Movies</h1>
-        <h5>Search, like and check who loves it!</h5>
+        <h1>Sign up, Like and check who likes it.</h1>
+        <h5>Create your favorite movies list and see who else liked them</h5>
       </div>
     </div>
     <div class="col-md-8 d-flex justify-content-end">
-      <div id="carouselExampleFade" class="carousel slide carousel-fade">
+      <div
+        id="carouselExampleFade"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
               src="/images/Babylon-Banner.png"
-              class="d-block img-fluid"
+              class="d-block w-100"
               alt="..."
             />
           </div>
           <div class="carousel-item">
-            <img
-              src="/images/Avatar-1.webp"
-              class="d-block img-fluid"
-              alt="..."
-            />
+            <img src="/images/Avatar-1.webp" class="d-block w-100" alt="..." />
           </div>
           <div class="carousel-item">
             <img
               src="/images/p21345047_v_h8_ai.jpg"
-              class="d-block img-fluid"
+              class="d-block w-100"
               alt="..."
             />
           </div>
@@ -166,10 +55,38 @@
 </div>
 
 {{! Section 1 }}
-<div class="container-fluid bg-dark" id="section2">
+<div class="container-fluid" id="section2">
   <div class="card-group row align-items-center">
-    <div class="card bg-dark col text-center border-dark">
-      <!-- Icon 1 Martini -->
+    <div class="card bg-dark col text-center border-dark section1-card">
+
+      <!-- Icon 1 Star -->
+      <div class="icon">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-star-fill text-white"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+          ></path>
+        </svg>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title text-white">Create an Account</h5>
+        <p class="card-text text-white">
+          Sign up, fill in a bio and spice it up with a nice profile picture!
+          You can then have access to not only an incredible search engine, but
+          also lists of the best movies and series.
+        </p>
+      </div>
+    </div>
+    <div class="card bg-dark col text-center border-dark section1-card">
+
+      <!-- Icon 2 Martini -->
 
       <span class="icon">
         <svg
@@ -187,42 +104,13 @@
       </span>
 
       <div class="card-body">
-        <h5 class="card-title text-white">Web design</h5>
+        <h5 class="card-title text-white">Search</h5>
         <p class="card-text text-white">
-          Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
-          ridiculus mus. Vestibulum vehicula erat non congue cursus. Aenean
-          auctor nulla quis augue dictum, sed sagittis odio varius
+          Use the Imdb API to search for a specific movie or tv series. Gain access to an incredible database and get to know more about your favorite film.
         </p>
       </div>
     </div>
-    <div class="card bg-dark col text-center border-dark">
-      <!-- Icon 2 Star -->
-      <div class="icon">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          fill="currentColor"
-          class="bi bi-star-fill text-white"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
-          ></path>
-        </svg>
-      </div>
-
-      <div class="card-body">
-        <h5 class="card-title text-white">Web development</h5>
-        <p class="card-text text-white">
-          Duis tempus leo vitae ipsum viverra, blandit condimentum sapien
-          porttitor. Duis porttitor sed metus eget mollis. Curabitur bibendum
-          imperdiet tortor, ut pulvinar purus elementum nspendisse at erat
-          luctus.
-        </p>
-      </div>
-    </div>
-    <div class="card bg-dark col text-center border-dark">
+    <div class="card bg-dark col text-center border-dark section1-card">
       <!-- Icon 3 Heart -->
       <div class="icon text-white">
         <svg
@@ -240,11 +128,9 @@
       </div>
 
       <div class="card-body">
-        <h5 class="card-title text-white">Card title</h5>
+        <h5 class="card-title text-white">Likes</h5>
         <p class="card-text text-white">
-          Cras aliquet venenatis porttitor. Donec rutrum sapien et sapien
-          dignissim, eu dapibus mi molestie. Suspendisse dictum convallis quam
-          et sodales. Praesent non enim et magna congue gravida.
+          Store your favorite movies or series in your profile by liking your favorites. You can also check who else liked the movie, maybe you can meet someone interesting.
         </p>
       </div>
     </div>
@@ -266,7 +152,7 @@
       <div class="row">
         <div class="col">
           <img
-            src="starter-code/img/project-1.jpg"
+            src="/images/Joker-2019-Final-Style-steps-Poster-buy-original-movie-posters-at-starstills__62518.jpg"
             class="img-thumbnail"
             alt="first image"
           />
@@ -274,7 +160,7 @@
         </div>
         <div class="col">
           <img
-            src="starter-code/img/project-2.jpg"
+            src="/images/pulp.jpg"
             class="img-thumbnail"
             alt="second image"
           />
@@ -282,7 +168,7 @@
         </div>
         <div class="col">
           <img
-            src="starter-code/img/project-3.jpg"
+            src="/images/14581432_max.jpg"
             class="img-thumbnail"
             alt="third image"
           />
@@ -290,9 +176,9 @@
         </div>
         <div class="col">
           <img
-            src="starter-code/img/project-4.jpg"
+            src="/images/891b4e126673e49ec8bcc10e43f39287.jpeg"
             class="img-thumbnail"
-            alt="fourth image"
+            alt="Movie Poster"
           />
           <p>
             Curabitur auctor dolor risus, vitae pellentesque arcu consequat
@@ -318,70 +204,56 @@
       <div class="row">
         <div class="col">
           <img
-            src="starter-code/img/slider-1.jpg"
+            src="/images/AAAAQePzTRUAxVRh2HMZ_e-VveoJ8aiePGkgnvruipwpBy0LUhMQhKHBDVrjXbcdsSeVcQHqtNCkJcPCAZMpqHoVmxItrAAILt7xtq25abqmWZrTY7vFQEiDK-rjaq4t63GdPEb_TOFpLDwLPeW_PkLhaGx2.jpg"
             class="img-thumbnail"
-            alt="cat and dog sleeping"
+            alt="Series Poster Wednesday"
           />
-          <p>Nunc libero elit, iaculis nec augue non</p>
+          <p>Wednesday</p>
 
           <p class="text-secondary">
-            Duis tempus leo vitae ipsum viverra, blandit condimentum sapien
-            porttitor. Duis porttitor sed metus eget mollis. Curabitur bibendum
-            imperdiet tortor, ut pulvinar purus elementum nec. Suspendisse at
-            erat luctus; hendrerit sapien sed, consectetur erat. Maecenas
-            dignissim suscipit orci at molestie. Aenean fringilla dolor vitae
-            lacus lacinia eleifend. Suspendisse et libero nunc. Etiam mauris
-            tortor, pharetra […]
+            Follows Wednesday Addams' years as a student, when she attempts to
+            master her emerging psychic ability, thwart a killing spree, and
+            solve the mystery that embroiled her parents.
           </p>
         </div>
         <div class="col">
           <img
-            src="starter-code/img/slider-2.jpg"
+            src="/images/el-juego-del-calamar-squid-game-serie-mejor-poster.jpg"
             class="img-thumbnail"
-            alt="beans"
+            alt="Series Poster Squid Game"
           />
-          <p>Phasellus aliquet iaculis neque accumsan aliquam</p>
+          <p>Squid Game</p>
           <p class="text-secondary">
-            Donec sed dolor eu augue dignissim pellentesque. Fusce semper tortor
-            ornare, luctus sem in, dictum leo. Ut at congue quam! Maecenas
-            luctus interdum odio, eget volutpat velit hendrerit eu? Suspendisse
-            at magna ut sem blandit hendrerit non ut magna. Cras quis porta
-            dolor. Aliquam erat volutpat. Phasellus fringilla feugiat libero nec
-            volutpat. Maecenas fermentum bibendum […]
+            Hundreds of cash-strapped players accept a strange invitation to
+            compete in children's games. Inside, a tempting prize awaits with
+            deadly high stakes. A survival game that has a whopping 45.6
+            billion-won prize at stake.
           </p>
         </div>
         <div class="col">
           <img
-            src="starter-code/img/slider-3.jpg"
+            src="/images/tess_jne2.620.webp"
             class="img-thumbnail"
             alt="flowers"
           />
-          <p>Vivamus blandit ipsum sed arcu euismod</p>
+          <p>The Last of Us</p>
           <p class="text-secondary">
-            Quisque sit amet sagittis justo. Suspendisse ornare, felis feugiat
-            suscipit pharetra, lorem est viverra odio; tristique tristique diam
-            tellus id tellus. In consectetur aliquet tristique. Curabitur
-            imperdiet leo in nisl consectetur mattis. Quisque bibendum, mauris
-            vitae suscipit ornare; est nibh elementum mauris, eu malesuada nunc
-            magna at justo. Proin blandit id tellus non pellentesque. Mauris […]
+            After a global pandemic destroys civilization, a hardened survivor
+            takes charge of a 14-year-old girl who may be humanity's last hope.
           </p>
         </div>
         <div class="col">
           <img
-            src="starter-code/img/slider-4.jpg"
+            src="/images/sherlock-series-4-iconic-i33910.jpg"
             class="img-thumbnail"
             alt="hiking"
           />
           <p>
-            Curabitur auctor dolor risus, vitae pellentesque arcu consequat
+            Sherlock
           </p>
           <p class="text-secondary">
-            Aenean quis rhoncus nisl, eget sollicitudin ipsum. Curabitur a
-            elementum purus. Quisque vitae dui at arcu porttitor laoreet ac
-            vitae nibh. Class aptent taciti sociosqu ad litora torquent per
-            conubia nostra, per inceptos himenaeos. Nulla facilisi. Nulla
-            egestas at nunc at volutpat. Nullam sodales at diam vel tempor. Sed
-            pretium, leo vel pellentesque dictum, ligula […]
+            A modern update finds the famous sleuth and his doctor partner
+            solving crime in 21st-century London.
           </p>
         </div>
       </div>
