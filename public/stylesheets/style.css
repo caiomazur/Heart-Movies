@@ -225,7 +225,7 @@ font-weight: 700;
       color: white;
     }
 
-    .card-profile {
+    #card-profile {
       align-items: center;
       max-width: 25vw;
       border: 1px solid rgb(251, 133, 0) ;
@@ -233,6 +233,9 @@ font-weight: 700;
       background: linear-gradient(to bottom, #120e22, #2f2845);
       margin: 2vh 1vw;
       
+    }
+    #card-profile img {
+      border-radius: 50%;
     }
 
     .container-profile {
@@ -255,8 +258,6 @@ font-weight: 700;
   #btn-edit:hover a{
     text-decoration: none;
     color:rgb(251, 133, 0);
-   
-     
   }
   
   #btn:hover {
@@ -267,6 +268,40 @@ font-weight: 700;
   #error {
     width: 100%;
   }
+
+  .logo svg {
+    fill: rgb(251, 133, 0);
+  }
+  
+  .card:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    border: 1px solid rgb(251, 133, 0);
+    background-color: rgb(251, 133, 0)
+  }
+  
+  .card:before {
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: rgb(251, 133, 0);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    transition: transform 0.15s ease-out;
+  }
+  
+  .card:hover:before {
+    transform: scale(2.15);
+  }
+  
+  
+  
+  
+  
 
 
  

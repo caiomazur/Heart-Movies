@@ -1,7 +1,7 @@
 <div class="container list">
   <div class="row justify-content-evenly">
   {{#each result.items}}
-  <div class="card list-card" style="width: 15rem;">
+  <div class="card list-card card-hover" style="width: 15rem;">
   {{#if image}}
   <img src={{image}} class="card-img-top" alt="Photo" style="max-height: 15rem;">
   {{/if}}
@@ -13,11 +13,16 @@
     {{!-- <p class="rating"><b class="text-rating">Rating: </b> {{imDbRating}}</p> --}}
     <p class="card-text text-light rating-text">Rating: {{imDbRating}}</p>
     <button type="button" id="btn" class="btn btn-outline-light"><a href="/movie-details/{{id}}" class="page-btn">Go to details</a></button>
-</div>
- 
+  </div>
 </div>
  {{/each}}
 </div>
 </div>
+
+
+
+
+
+
 
 

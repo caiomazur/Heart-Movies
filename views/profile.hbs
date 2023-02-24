@@ -15,11 +15,11 @@
 </div>
  --}}
 
- <div class="container container-profile d-flex justify-content-center align-items-center">
+<div class="container container-profile d-flex justify-content-center align-items-center">
   {{#if checkUser.username}}
-    <div class="card card-profile p-4" > 
+    <div id="card-profile"class="card  p-4"> 
       <h3>{{checkUser.username}}</h3>
-      <img class="card-img-top rounded-circle" src="{{checkUser.imageUrl}}" alt="Card image cap">
+      <img class="card-img-top " style="" src="{{checkUser.imageUrl}}" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">Bio: {{checkUser.description}}</p>
       </div>

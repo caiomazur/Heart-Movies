@@ -14,7 +14,7 @@
     class="card mx-4 mx-md-5 shadow-5-strong"
     style="
         margin-top: -100px;
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(30px);
         "
   >
@@ -23,7 +23,8 @@
       <div class="row d-flex justify-content-center">
         <div class="col-lg-8">
           <h2 class="fw-bold mb-5">Sign Up</h2>
-          <form action="/signup" method="POST">
+
+          <form action="/signup" method="POST"  enctype='multipart/form-data'>
             <!-- 2 column grid layout with text inputs for the first and last names -->
             <div class="row">
 
@@ -34,6 +35,7 @@
                   id="form3Example1"
                   name="username"
                   class="form-control"
+                  placeholder="Name"
                 />
 
               </div>
@@ -47,6 +49,7 @@
                 id="form3Example4"
                 class="form-control"
                 name="password"
+                placeholder="Password"
               />
 
             </div>
@@ -71,7 +74,7 @@
              </div>
 
             <!-- Submit button -->
-            <button type="submit" id="btn" class="btn btn-primary btn-block mb-4">
+            <button type="submit" id="btn" class="btn btn-block mb-4">
               Sign Up
             </button>
 

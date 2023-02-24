@@ -15,7 +15,7 @@
     class="card mx-4 mx-md-5 shadow-5-strong"
     style="
         margin-top: -100px;
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(30px);
         "
   >
@@ -36,6 +36,8 @@
                   id="form3Example1"
                   name="username"
                   class="form-control"
+                  id='username'
+                  value="{{username}}"
                 />
 
               </div>
@@ -65,15 +67,17 @@
               
 
             <!-- Submit button -->
-            <button type="submit" id="btn" class="btn btn-primary btn-block mb-4">
+            <div>
+            <button type="submit" id="btn" class="btn  btn-block mb-4">
               Submit
             </button>
-
+             
           </form>
 
           <form action="/edit-profile/{{_id}}/delete" method="post">
-            <button type='submit' class='btn btn-danger'>Delete</button>
+            <button type='submit' class='btn btn-danger btn-block mb-4'>Delete Profile</button>
           </form>
+          </div>
         </div>
       </div>
     </div>
